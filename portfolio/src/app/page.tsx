@@ -30,7 +30,7 @@ export default function Portfolio() {
       <nav className="fixed top-0 w-full z-50 glass-panel border-b-0 border-white/5 py-4 px-6 md:px-12 flex justify-between items-center backdrop-blur-md bg-[#030014]/50">
         <div className="text-xl font-bold tracking-tighter cursor-pointer" onClick={() => scrollTo("home")}>
           <span className="text-gradient">Nandha</span>
-          <span className="text-white">kumar.</span>
+          <span className="text-white">kumar S.</span>
         </div>
         <div className="hidden md:flex space-x-8">
           {navLinks.map((link) => (
