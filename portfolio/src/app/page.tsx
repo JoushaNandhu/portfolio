@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { Terminal, Server, Cloud, ExternalLink, Github, Mail, Linkedin, Briefcase, GraduationCap, Code2, Phone } from "lucide-react";
+import Image from "next/image";
 
 export default function Portfolio() {
   const [activeSection, setActiveSection] = useState("home");
@@ -51,28 +52,53 @@ export default function Portfolio() {
       <main className="relative z-10 pt-24 px-6 md:px-12 lg:px-24 max-w-7xl mx-auto flex flex-col gap-32 pb-32">
         
         {/* --- HERO SECTION --- */}
-        <section id="home" className="min-h-[80vh] flex flex-col justify-center items-start relative mt-10">
-          <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }} className="inline-flex items-center space-x-2 bg-blue-500/10 border border-blue-500/20 rounded-full px-4 py-1.5 mb-8">
-            <span className="flex h-2 w-2 rounded-full bg-blue-500 animate-[pulse_2s_infinite]"></span>
-            <span className="text-sm font-medium text-blue-300">Available for Opportunities</span>
-          </motion.div>
+        <section id="home" className="min-h-[85vh] flex flex-col lg:flex-row justify-center items-center lg:justify-between relative mt-10 gap-16">
           
-          <motion.h1 initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.1 }} className="text-5xl md:text-7xl font-extrabold tracking-tight mb-6 leading-tight">
-            DevOps Engineer <br />
-            <span className="text-gradient block mt-2 text-3xl md:text-5xl">Cloud, System & Network Specialist</span>
-          </motion.h1>
+          {/* Text Content */}
+          <div className="flex-1 flex flex-col items-start z-10 w-full">
+            <motion.div initial={{ opacity: 0, scale: 0.8 }} animate={{ opacity: 1, scale: 1 }} transition={{ type: "spring", stiffness: 100, damping: 15 }} className="inline-flex items-center space-x-2 bg-blue-500/10 border border-blue-500/20 rounded-full px-4 py-1.5 mb-8">
+              <span className="flex h-2 w-2 rounded-full bg-blue-500 animate-[pulse_2s_infinite]"></span>
+              <span className="text-sm font-medium text-blue-300">Available for Opportunities</span>
+            </motion.div>
+            
+            <motion.h1 initial={{ opacity: 0, x: -30 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.7, delay: 0.1, ease: "easeOut" }} className="text-5xl md:text-7xl font-extrabold tracking-tight mb-6 leading-tight">
+              DevOps Engineer <br />
+              <span className="text-gradient block mt-2 text-3xl md:text-5xl pb-1">Cloud, System & Network Specialist</span>
+            </motion.h1>
 
-          <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.2 }} className="max-w-2xl text-lg md:text-xl text-gray-400 mb-10 leading-relaxed">
-            I build resilient, scalable, and automated systems. With hands-on experience in system administration, networking, and AWS cloud services, I bridge the gap between infrastructure and smooth operational workflows.
-          </motion.p>
+            <motion.p initial={{ opacity: 0, x: -30 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.7, delay: 0.2, ease: "easeOut" }} className="max-w-2xl text-lg md:text-xl text-gray-400 mb-10 leading-relaxed">
+              I build resilient, scalable, and automated systems. With hands-on experience in system administration, networking, and AWS cloud services, I bridge the gap between infrastructure and smooth operational workflows.
+            </motion.p>
 
-          <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.3 }} className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
-            <button onClick={() => scrollTo("projects")} className="px-8 py-4 rounded-lg text-white bg-blue-600 hover:bg-blue-500 transition-all font-medium shadow-[0_0_20px_rgba(59,130,246,0.3)] hover:shadow-[0_0_30px_rgba(59,130,246,0.5)]">
-              View My Work
-            </button>
-            <button onClick={() => scrollTo("contact")} className="px-8 py-4 rounded-lg glass-panel hover:bg-white/5 transition-all font-medium text-gray-200">
-              Contact Me
-            </button>
+            <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.3, ease: "easeOut" }} className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
+              <button onClick={() => scrollTo("projects")} className="px-8 py-4 rounded-lg text-white bg-blue-600 hover:bg-blue-500 transition-all font-medium shadow-[0_0_20px_rgba(59,130,246,0.3)] hover:shadow-[0_0_30px_rgba(59,130,246,0.5)] transform hover:-translate-y-1">
+                View My Work
+              </button>
+              <button onClick={() => scrollTo("contact")} className="px-8 py-4 rounded-lg glass-panel hover:bg-white/5 transition-all font-medium text-white transform hover:-translate-y-1">
+                Contact Me
+              </button>
+            </motion.div>
+          </div>
+
+          {/* Profile Image Content */}
+          <motion.div 
+            initial={{ opacity: 0, scale: 0.5, rotate: -5 }} 
+            animate={{ opacity: 1, scale: 1, rotate: 0 }} 
+            transition={{ type: "spring", stiffness: 100, damping: 15, delay: 0.2 }}
+            className="w-full max-w-sm lg:max-w-md relative z-10 flex justify-center lg:justify-end mt-12 lg:mt-0"
+          >
+            <div className="relative w-64 h-64 md:w-80 md:h-80 rounded-full p-2 glass-panel border border-blue-500/30 shadow-[0_0_40px_rgba(59,130,246,0.2)] group flex-shrink-0 overflow-hidden">
+              <div className="absolute inset-[-50%] bg-gradient-to-tr from-blue-500/30 via-transparent to-purple-500/30 animate-[spin_8s_linear_infinite] opacity-50 group-hover:opacity-100 transition-opacity duration-500"></div>
+              <div className="absolute inset-2 rounded-full overflow-hidden bg-[#030014] z-10">
+                <Image 
+                  src="/profile.jpg" 
+                  alt="Nandhakumar S" 
+                  fill 
+                  className="object-cover transition-transform duration-700 group-hover:scale-110"
+                  priority
+                />
+              </div>
+            </div>
           </motion.div>
         </section>
 
