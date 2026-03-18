@@ -19,7 +19,7 @@ export default function Portfolio() {
   };
 
   return (
-    <div className="min-h-screen bg-[#030014] text-gray-200 relative selection:bg-blue-500/30">
+    <div className="min-h-screen bg-[#030014] text-gray-200 relative selection:bg-blue-500/30 overflow-x-hidden">
       {/* Background Effects */}
       <div className="fixed inset-0 pointer-events-none z-0 overflow-hidden">
         <div className="absolute top-[-10%] left-[-10%] w-[40vw] h-[40vw] rounded-full bg-blue-600/10 blur-[120px]" />
@@ -55,10 +55,10 @@ export default function Portfolio() {
         <section id="home" className="min-h-[85vh] flex flex-col lg:flex-row justify-center items-center lg:justify-between relative mt-10 gap-16">
           
           {/* Text Content */}
-          <div className="flex-1 flex flex-col items-start z-10 w-full">
-            <motion.h1 initial={{ opacity: 0, x: -30 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.7, delay: 0.1, ease: "easeOut" }} className="text-5xl md:text-7xl font-extrabold tracking-tight mb-6 leading-tight">
-              <span className="text-white block">DevOps Engineer</span>
-              <span className="text-gradient block mt-2 text-[1.4rem] sm:text-3xl md:text-4xl lg:text-5xl pb-1 whitespace-nowrap">Cloud, System & Network Specialist</span>
+          <div className="flex-1 flex flex-col items-start z-10 w-full max-w-full">
+            <motion.h1 initial={{ opacity: 0, x: -30 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.7, delay: 0.1, ease: "easeOut" }} className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tight mb-6 leading-tight w-full">
+              <span className="text-white block whitespace-nowrap">DevOps Engineer</span>
+              <span className="text-gradient block mt-2 text-[4vw] sm:text-2xl md:text-3xl lg:text-4xl pb-1 whitespace-nowrap">Cloud, System & Network Specialist</span>
             </motion.h1>
 
             <motion.p initial={{ opacity: 0, x: -30 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.7, delay: 0.2, ease: "easeOut" }} className="max-w-2xl text-lg md:text-xl text-gray-400 mb-10 leading-relaxed">
