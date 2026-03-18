@@ -26,7 +26,7 @@ export default function RootLayout({
       <body
         className={`${inter.variable} font-sans antialiased`}
       >
-        {/* <BackgroundEffect /> */}
+        <BackgroundEffect />
         <Navbar />
         <main className="relative z-10 w-full pt-20">
           {children}
