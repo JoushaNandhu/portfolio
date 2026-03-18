@@ -56,9 +56,9 @@ export default function Portfolio() {
           
           {/* Text Content */}
           <div className="flex-1 flex flex-col items-start z-10 w-full">
-            <motion.h1 initial={{ opacity: 0, x: -30 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.7, delay: 0.1, ease: "easeOut" }} className="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight mb-6 leading-tight">
-              <span className="text-white">DevOps Engineer <span className="text-blue-500 font-light mx-2">|</span> </span>
-              <span className="text-gradient">Cloud, System & Network Specialist</span>
+            <motion.h1 initial={{ opacity: 0, x: -30 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.7, delay: 0.1, ease: "easeOut" }} className="flex flex-row items-center whitespace-nowrap text-3xl md:text-4xl lg:text-5xl font-extrabold tracking-tight mb-6 w-full overflow-hidden">
+              <span className="text-white shrink-0">DevOps Engineer <span className="text-blue-500 font-light mx-2">|</span> </span>
+              <span className="text-gradient truncate pb-1">Cloud, System & Network Specialist</span>
             </motion.h1>
 
             <motion.p initial={{ opacity: 0, x: -30 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.7, delay: 0.2, ease: "easeOut" }} className="max-w-2xl text-lg md:text-xl text-gray-400 mb-10 leading-relaxed">
