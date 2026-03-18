@@ -124,11 +124,11 @@ export default function Portfolio() {
                   {exp.icon}
                 </div>
                 <div className="w-full md:w-[calc(50%-2.5rem)] glass-panel p-8 rounded-2xl hover:border-blue-500/30 transition-colors">
-                  <div className="flex flex-col xl:flex-row xl:items-start justify-between mb-3 gap-3">
-                    <h3 className="font-bold text-xl text-white">{exp.title}</h3>
-                    <span className="text-sm font-mono text-blue-400 px-3 py-1 bg-blue-500/10 rounded-full w-fit shrink-0">{exp.date}</span>
+                  <div className="flex flex-col mb-4 gap-2">
+                    <h3 className="font-bold text-xl text-white leading-tight">{exp.title}</h3>
+                    <div className="text-gray-400 text-sm font-medium">{exp.org}</div>
+                    <span className="text-sm font-mono text-blue-400 px-3 py-1 bg-blue-500/10 rounded-full w-fit mt-1">{exp.date}</span>
                   </div>
-                  <div className="text-gray-400 text-sm mb-4 font-medium">{exp.org}</div>
                   <p className="text-gray-300 text-sm leading-relaxed">{exp.desc}</p>
                 </div>
               </motion.div>
