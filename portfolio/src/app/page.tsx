@@ -56,14 +56,9 @@ export default function Portfolio() {
           
           {/* Text Content */}
           <div className="flex-1 flex flex-col items-start z-10 w-full">
-            <motion.div initial={{ opacity: 0, scale: 0.8 }} animate={{ opacity: 1, scale: 1 }} transition={{ type: "spring", stiffness: 100, damping: 15 }} className="inline-flex items-center space-x-2 bg-blue-500/10 border border-blue-500/20 rounded-full px-4 py-1.5 mb-8">
-              <span className="flex h-2 w-2 rounded-full bg-blue-500 animate-[pulse_2s_infinite]"></span>
-              <span className="text-sm font-medium text-blue-300">Available for Opportunities</span>
-            </motion.div>
-            
-            <motion.h1 initial={{ opacity: 0, x: -30 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.7, delay: 0.1, ease: "easeOut" }} className="text-5xl md:text-7xl font-extrabold tracking-tight mb-6 leading-tight">
-              DevOps Engineer <br />
-              <span className="text-gradient block mt-2 text-3xl md:text-5xl pb-1">Cloud, System & Network Specialist</span>
+            <motion.h1 initial={{ opacity: 0, x: -30 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.7, delay: 0.1, ease: "easeOut" }} className="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight mb-6 leading-tight">
+              <span className="text-white">DevOps Engineer <span className="text-blue-500 font-light mx-2">|</span> </span>
+              <span className="text-gradient">Cloud, System & Network Specialist</span>
             </motion.h1>
 
             <motion.p initial={{ opacity: 0, x: -30 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.7, delay: 0.2, ease: "easeOut" }} className="max-w-2xl text-lg md:text-xl text-gray-400 mb-10 leading-relaxed">
@@ -106,7 +101,7 @@ export default function Portfolio() {
         <section id="about" className="scroll-mt-32">
           <SectionHeading title="About Me" subtitle="Who I am & What I do" />
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mt-12">
-            <motion.div initial={{ opacity: 0, x: -20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} className="glass-panel p-8 rounded-3xl">
+            <motion.div initial={{ opacity: 0, x: -20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: false, margin: "-50px" }} className="glass-panel p-8 rounded-3xl">
               <p className="text-gray-300 leading-relaxed text-lg mb-6">
                 I am a passionate <strong className="text-white">DevOps & System Engineer</strong> focused on bridging the gap between development and operations. My primary goal is to become a leading Cloud & DevOps Engineer by building resilient, scalable, and automated systems.
               </p>
@@ -115,7 +110,7 @@ export default function Portfolio() {
               </p>
             </motion.div>
             
-            <motion.div initial={{ opacity: 0, x: 20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} className="glass-panel p-8 rounded-3xl">
+            <motion.div initial={{ opacity: 0, x: 20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: false, margin: "-50px" }} className="glass-panel p-8 rounded-3xl">
               <h3 className="text-xl font-bold text-white mb-6 flex items-center gap-3">
                 <Cloud className="text-blue-400" /> Licenses & Certifications
               </h3>
@@ -145,7 +140,7 @@ export default function Portfolio() {
           <SectionHeading title="Experience & Education" subtitle="My Journey" />
           <div className="mt-12 space-y-8 relative before:absolute before:inset-0 before:ml-5 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-transparent before:via-white/10 before:to-transparent">
             {experiences.map((exp, index) => (
-              <motion.div key={index} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: index * 0.1 }} className="relative flex flex-col md:flex-row items-center justify-between md:odd:flex-row-reverse group">
+              <motion.div key={index} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: false, margin: "-50px" }} transition={{ delay: index * 0.1 }} className="relative flex flex-col md:flex-row items-center justify-between md:odd:flex-row-reverse group">
                 <div className="flex items-center justify-center w-10 h-10 rounded-full border border-white/10 bg-[#030014] shrink-0 md:order-1 shadow-[0_0_15px_rgba(59,130,246,0.2)] z-10 my-4 md:my-0">
                   {exp.icon}
                 </div>
@@ -167,7 +162,7 @@ export default function Portfolio() {
           <SectionHeading title="Technical Skills" subtitle="Technologies I work with" />
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
             {skills.map((category, idx) => (
-              <motion.div key={idx} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: idx * 0.1 }} className="glass-panel p-8 rounded-3xl relative overflow-hidden group">
+              <motion.div key={idx} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: false, margin: "-50px" }} transition={{ delay: idx * 0.1 }} className="glass-panel p-8 rounded-3xl relative overflow-hidden group">
                 <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 to-purple-500/5 opacity-0 group-hover:opacity-100 transition-opacity" />
                 <h3 className="text-xl font-bold text-white mb-6 pb-4 border-b border-white/10">{category.title}</h3>
                 <div className="flex flex-wrap gap-3">
@@ -187,7 +182,7 @@ export default function Portfolio() {
           <SectionHeading title="Featured Projects" subtitle="Recent Work" />
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mt-12">
             {projects.map((project, idx) => (
-              <motion.div key={idx} initial={{ opacity: 0, scale: 0.95 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: true }} transition={{ delay: idx * 0.1 }} className="glass-panel rounded-3xl p-8 flex flex-col h-full group">
+              <motion.div key={idx} initial={{ opacity: 0, scale: 0.95 }} whileInView={{ opacity: 1, scale: 1 }} viewport={{ once: false, margin: "-50px" }} transition={{ delay: idx * 0.1 }} className="glass-panel rounded-3xl p-8 flex flex-col h-full group">
                 <div className="flex justify-between items-start mb-6">
                   <div className="w-12 h-12 rounded-xl bg-blue-500/10 flex items-center justify-center border border-blue-500/20 text-blue-400 group-hover:scale-110 transition-transform">
                     <Terminal size={24} />
@@ -211,7 +206,7 @@ export default function Portfolio() {
 
         {/* --- CONTACT --- */}
         <section id="contact" className="scroll-mt-32 flex flex-col items-center text-center">
-          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="max-w-3xl w-full glass-panel p-12 rounded-3xl">
+          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: false, margin: "-50px" }} className="max-w-3xl w-full glass-panel p-12 rounded-3xl">
             <h2 className="text-3xl md:text-5xl font-bold mb-6 text-white">Get In Touch</h2>
             <p className="text-gray-400 mb-10 text-lg">
               I am currently looking for new opportunities as a System/Network Engineer or entry-level DevOps Engineer. Whether you have a question or just want to collaborate on a project, I&apos;ll try my best to get back to you!
@@ -244,7 +239,7 @@ export default function Portfolio() {
 
 function SectionHeading({ title, subtitle }: { title: string, subtitle: string }) {
   return (
-    <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="flex flex-col gap-3">
+    <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: false, margin: "-50px" }} className="flex flex-col gap-3">
       <span className="text-blue-500 font-mono text-sm tracking-wider uppercase bg-blue-500/10 w-fit px-4 py-1.5 rounded-full border border-blue-500/20">{subtitle}</span>
       <h2 className="text-4xl md:text-5xl font-bold text-white">{title}</h2>
     </motion.div>
