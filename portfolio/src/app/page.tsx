@@ -249,7 +249,7 @@ function SectionHeading({ title, subtitle }: { title: string, subtitle: string }
 const experiences = [
   {
     title: "Implementation Engineer (DevOps)",
-    org: "Keel Xpert Technology",
+    org: "Keel Xpert Technology, Chennai",
     date: "Jan 2026 - Present",
     desc: "Hosting front-end and back-end applications on AWS using Docker containers. Implementing CI/CD pipelines, automating infrastructure deployment, and ensuring system reliability.",
     icon: <Cloud size={20} className="text-blue-500" />
