@@ -4,14 +4,11 @@ import React, { useState } from "react";
 import { motion } from "framer-motion";
 import { Terminal, Server, Cloud, ExternalLink, Github, Mail, Linkedin, Briefcase, GraduationCap, Code2, Phone } from "lucide-react";
 import Image from "next/image";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
 
 export default function Portfolio() {
-  const [activeSection, setActiveSection] = useState("home");
-
-  const navLinks = ["Home", "About", "Experience", "Skills", "Projects", "Contact"];
-
   const scrollTo = (id: string) => {
-    setActiveSection(id.toLowerCase());
     const element = document.getElementById(id.toLowerCase());
     if (element) {
       element.scrollIntoView({ behavior: "smooth" });
@@ -27,26 +24,7 @@ export default function Portfolio() {
         <div className="absolute bottom-[-10%] left-[20%] w-[40vw] h-[40vw] rounded-full bg-pink-600/10 blur-[120px]" />
       </div>
 
-      {/* Navigation */}
-      <nav className="fixed top-0 w-full z-50 glass-panel border-b-0 border-white/5 py-4 px-6 md:px-12 flex justify-between items-center backdrop-blur-md bg-[#030014]/50">
-        <div className="text-xl font-bold tracking-tighter cursor-pointer" onClick={() => scrollTo("home")}>
-          <span className="text-gradient">Nandha</span>
-          <span className="text-white">kumar S.</span>
-        </div>
-        <div className="hidden md:flex space-x-8">
-          {navLinks.map((link) => (
-            <button
-              key={link}
-              onClick={() => scrollTo(link)}
-              className={`text-sm tracking-wide transition-colors ${
-                activeSection === link.toLowerCase() ? "text-blue-400 font-medium" : "text-gray-400 hover:text-white"
-              }`}
-            >
-              {link}
-            </button>
-          ))}
-        </div>
-      </nav>
+      <Navbar />
 
       {/* Main Content */}
       <main className="relative z-10 pt-24 px-6 md:px-12 lg:px-24 max-w-7xl mx-auto flex flex-col gap-32 pb-32">
@@ -98,7 +76,7 @@ export default function Portfolio() {
         </section>
 
         {/* --- ABOUT & CERTIFICATIONS --- */}
-        <section id="about" className="scroll-mt-32">
+        <section id="about" className="scroll-mt-navbar">
           <SectionHeading title="About Me" subtitle="Who I am & What I do" />
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mt-12">
             <motion.div initial={{ opacity: 0, x: -20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: false, margin: "-50px" }} className="glass-panel p-8 rounded-3xl">
@@ -136,7 +114,7 @@ export default function Portfolio() {
         </section>
 
         {/* --- EXPERIENCE --- */}
-        <section id="experience" className="scroll-mt-32">
+        <section id="experience" className="scroll-mt-navbar">
           <SectionHeading title="Experience & Education" subtitle="My Journey" />
           <div className="mt-12 space-y-8 relative before:absolute before:inset-0 before:ml-5 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-transparent before:via-white/10 before:to-transparent">
             {experiences.map((exp, index) => (
@@ -158,7 +136,7 @@ export default function Portfolio() {
         </section>
 
         {/* --- SKILLS --- */}
-        <section id="skills" className="scroll-mt-32">
+        <section id="skills" className="scroll-mt-navbar">
           <SectionHeading title="Technical Skills" subtitle="Technologies I work with" />
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-12">
             {skills.map((category, idx) => (
@@ -178,7 +156,7 @@ export default function Portfolio() {
         </section>
 
         {/* --- PROJECTS --- */}
-        <section id="projects" className="scroll-mt-32">
+        <section id="projects" className="scroll-mt-navbar">
           <SectionHeading title="Featured Projects" subtitle="Recent Work" />
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mt-12">
             {projects.map((project, idx) => (
@@ -205,7 +183,7 @@ export default function Portfolio() {
         </section>
 
         {/* --- CONTACT --- */}
-        <section id="contact" className="scroll-mt-32 flex flex-col items-center text-center">
+        <section id="contact" className="scroll-mt-navbar flex flex-col items-center text-center">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: false, margin: "-50px" }} className="max-w-3xl w-full glass-panel p-12 rounded-3xl">
             <h2 className="text-3xl md:text-5xl font-bold mb-6 text-white">Get In Touch</h2>
             <p className="text-gray-400 mb-10 text-lg">
@@ -227,10 +205,7 @@ export default function Portfolio() {
       </main>
 
       {/* Footer */}
-      <footer className="border-t border-white/5 py-8 text-center text-gray-500 text-sm relative z-10 w-full mb-0 mt-32">
-        <p>Built cleanly with Next.js, Tailwind CSS & Framer Motion.</p>
-        <p className="mt-2 text-blue-500">© {new Date().getFullYear()} Nandhakumar S.</p>
-      </footer>
+      <Footer />
     </div>
   );
 }

@@ -1,5 +1,17 @@
 @import "tailwindcss";
 
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer utilities {
+  .scroll-mt-navbar {
+    scroll-margin-top: 5rem;
+  }
+}
+
 @theme {
   --color-background: #030014;
   --color-foreground: #ededed;
@@ -23,10 +35,16 @@ body {
 /* Glassmorphism Utilities Setup */
 .glass-panel {
   background: rgba(255, 255, 255, 0.03);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   border: 1px solid rgba(255, 255, 255, 0.05);
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+}
+
+.glass {
+  background: rgba(3, 0, 20, 0.7);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
 }
 
 .text-gradient {

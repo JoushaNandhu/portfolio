@@ -4,18 +4,21 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import Image from "next/image";
 
 const navLinks = [
+  { name: "Home", href: "#home" },
   { name: "About", href: "#about" },
+  { name: "Experience", href: "#experience" },
   { name: "Skills", href: "#skills" },
   { name: "Projects", href: "#projects" },
-  { name: "Experience", href: "#experience" },
   { name: "Contact", href: "#contact" },
 ];
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [activeSection, setActiveSection] = useState("home");
 
   useEffect(() => {
     const handleScroll = () => {
@@ -23,6 +26,32 @@ export default function Navbar() {
     };
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  useEffect(() => {
+    const observerOptions = {
+      root: null,
+      rootMargin: "-20% 0px -70% 0px",
+      threshold: 0,
+    };
+
+    const handleIntersect = (entries: IntersectionObserverEntry[]) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          setActiveSection(entry.target.id);
+        }
+      });
+    };
+
+    const observer = new IntersectionObserver(handleIntersect, observerOptions);
+    const sections = ["home", "about", "experience", "skills", "projects", "contact"];
+    
+    sections.forEach((id) => {
+      const element = document.getElementById(id);
+      if (element) observer.observe(element);
+    });
+
+    return () => observer.disconnect();
   }, []);
 
   return (
@@ -33,10 +62,22 @@ export default function Navbar() {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center">
-          {/* Logo */}
-          <Link href="/" className="text-xl font-bold tracking-tighter">
-            <span className="text-gradient">Nandha</span>
-            <span className="text-white">kumar.</span>
+          <Link href="#home" className="flex items-center gap-2 group">
+            <div className="relative w-10 h-10 rounded-xl overflow-hidden glass border border-white/10 group-hover:border-blue-500/50 transition-colors">
+              <Image 
+                src="/logo.png" 
+                alt="Logo" 
+                fill 
+                className="object-cover p-1"
+              />
+            </div>
+            <div className="flex flex-col">
+              <span className="text-lg font-bold tracking-tighter leading-none">
+                <span className="text-gradient">Nandha</span>
+                <span className="text-white">kumar.</span>
+              </span>
+              <span className="text-[10px] text-gray-500 font-medium tracking-widest uppercase">Portfolio</span>
+            </div>
           </Link>
 
           {/* Desktop Nav */}
@@ -45,9 +86,20 @@ export default function Navbar() {
               <Link
                 key={link.name}
                 href={link.href}
-                className="text-gray-300 hover:text-white transition-colors text-sm font-medium"
+                className={`transition-all duration-300 text-sm font-medium relative py-1 px-2 rounded-lg hover:bg-white/5 ${
+                  activeSection === link.href.substring(1) 
+                    ? "text-blue-400" 
+                    : "text-gray-300 hover:text-white"
+                }`}
               >
                 {link.name}
+                {activeSection === link.href.substring(1) && (
+                  <motion.div
+                    layoutId="activeTab"
+                    className="absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full"
+                    transition={{ type: "spring", stiffness: 380, damping: 30 }}
+                  />
+                )}
               </Link>
             ))}
           </div>
@@ -79,7 +131,11 @@ export default function Navbar() {
                   key={link.name}
                   href={link.href}
                   onClick={() => setIsOpen(false)}
-                  className="text-gray-300 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
+                  className={`block px-6 py-3 rounded-xl text-base font-medium transition-all ${
+                    activeSection === link.href.substring(1)
+                      ? "bg-blue-500/10 text-blue-400 border border-blue-500/20"
+                      : "text-gray-300 hover:text-white hover:bg-white/5"
+                  }`}
                 >
                   {link.name}
                 </Link>
