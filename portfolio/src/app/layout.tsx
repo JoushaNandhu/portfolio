@@ -5,6 +5,9 @@ import "./globals.css";
 export const metadata: Metadata = {
   title: "Nandhakumar | DevOps Engineer Portfolio | AWS | Cloud | CI/CD",
   description: "DevOps Engineer portfolio showcasing AWS, Docker, Kubernetes, CI/CD projects and cloud automation skills.",
+  icons: {
+    icon: "/N.png?v=final3",
+  },
 };
 
 export default function RootLayout({
@@ -15,7 +18,6 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth">
       <head>
-        <link rel="icon" href="/favicon.ico" />
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-S0VT874KR5"
           strategy="afterInteractive"
