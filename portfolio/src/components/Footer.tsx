@@ -33,7 +33,7 @@ export default function Footer() {
             <Github size={20} />
           </a>
           <a
-            href="https://linkedin.com/in/nandhakumars"
+            href="https://www.linkedin.com/in/-s-nandhakumar/"
             target="_blank"
             rel="noopener noreferrer"
             className="hover:text-white transition-colors"
@@ -42,7 +42,7 @@ export default function Footer() {
             <Linkedin size={20} />
           </a>
           <a
-            href="mailto:nandha@example.com"
+            href="mailto:nandhanandhu72618@gmail.com"
             className="hover:text-white transition-colors"
           >
             <span className="sr-only">Email</span>
