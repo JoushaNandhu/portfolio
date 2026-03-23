@@ -65,10 +65,10 @@ export default function Navbar() {
           <Link href="#home" className="flex items-center gap-2 group">
             <div className="relative w-10 h-10 rounded-xl overflow-hidden glass border border-white/10 group-hover:border-blue-500/50 transition-colors">
               <Image 
-                src="/logo.png" 
+                src="/black-logo.svg" 
                 alt="Logo" 
                 fill 
-                className="object-cover p-1"
+                className="object-contain p-1.5"
               />
             </div>
             <div className="flex flex-col">

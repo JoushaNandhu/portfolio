@@ -5,7 +5,7 @@ export const metadata: Metadata = {
   title: "Nandhakumar S | Software & DevOps Engineer",
   description: "Portfolio of Nandhakumar S, an Aspiring DevOps and Cloud Engineer building scalable, automated systems.",
   icons: {
-    icon: "/logo.png",
+    icon: "/black-logo.svg",
   },
 };
 

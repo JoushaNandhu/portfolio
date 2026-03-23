@@ -11,10 +11,10 @@ export default function Footer() {
           <div className="flex items-center gap-2 mb-3">
             <div className="relative w-8 h-8 rounded-lg overflow-hidden glass border border-white/5">
               <Image 
-                src="/logo.png" 
+                src="/black-logo.svg" 
                 alt="Logo" 
                 fill 
-                className="object-cover p-1"
+                className="object-contain p-1"
               />
             </div>
             <span className="text-lg font-bold tracking-tighter">
