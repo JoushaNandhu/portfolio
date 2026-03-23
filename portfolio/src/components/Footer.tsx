@@ -9,14 +9,6 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center text-gray-400">
         <div className="mb-6 md:mb-0 flex flex-col items-center md:items-start">
           <div className="flex items-center gap-2 mb-3">
-            <div className="relative w-8 h-8 rounded-lg overflow-hidden glass border border-white/5">
-              <Image 
-                src="/black-logo.svg" 
-                alt="Logo" 
-                fill 
-                className="object-contain p-1"
-              />
-            </div>
             <span className="text-lg font-bold tracking-tighter">
               <span className="text-gradient">Nandha</span>
               <span className="text-white">kumar.</span>

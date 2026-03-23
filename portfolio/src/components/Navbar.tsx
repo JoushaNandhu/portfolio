@@ -63,20 +63,11 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center">
           <Link href="#home" className="flex items-center gap-2 group">
-            <div className="relative w-10 h-10 rounded-xl overflow-hidden glass border border-white/10 group-hover:border-blue-500/50 transition-colors">
-              <Image 
-                src="/black-logo.svg" 
-                alt="Logo" 
-                fill 
-                className="object-contain p-1.5"
-              />
-            </div>
             <div className="flex flex-col">
-              <span className="text-lg font-bold tracking-tighter leading-none">
+              <span className="text-xl font-bold tracking-tighter leading-none">
                 <span className="text-gradient">Nandha</span>
                 <span className="text-white">kumar.</span>
               </span>
-              <span className="text-[10px] text-gray-500 font-medium tracking-widest uppercase">Portfolio</span>
             </div>
           </Link>
 
