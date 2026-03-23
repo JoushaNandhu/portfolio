@@ -3,8 +3,8 @@ import Script from "next/script";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Nandhakumar S | Software & DevOps Engineer",
-  description: "Portfolio of Nandhakumar S, an Aspiring DevOps and Cloud Engineer building scalable, automated systems.",
+  title: "Nandhakumar | DevOps Engineer Portfolio | AWS | Cloud | CI/CD",
+  description: "DevOps Engineer portfolio showcasing AWS, Docker, Kubernetes, CI/CD projects and cloud automation skills.",
   icons: {
     icon: "/N.png?v=final2",
   },
